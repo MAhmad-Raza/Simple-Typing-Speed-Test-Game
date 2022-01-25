@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #17a2b8;
+}
+h1 {
+  text-align: center;
+}
+.slogan {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.wrapper {
+  width: 770px;
+  padding: 35px;
+  background: white;
+  border-radius: 10px;
+}
+.wrapper .inputField {
+  z-index: -999px;
+  opacity: 0;
+  position: absolute;
+}
+
+.wrapper .contentBox {
+  padding: 13px 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.contentBox .typingTest {
+  min-height: 255px;
+  overflow-y: auto;
+}
+.typingTest::-webkit-scrollbar {
+  width: 0;
+}
+.typingTest p {
+  font-size: 21px;
+  text-align: justify;
+  letter-spacing: 1px;
+  word-break: break-all;
+  font-family: "Montserrat", sans-serif;
+}
+.typingTest p span.active {
+  color: #17a2b8;
+}
+.typingTest p span {
+  position: relative;
+}
+.typingTest p span.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  height: 2px;
+  width: 100%;
+  animation: blink 1s ease-in-out infinite;
+  background: #17a2b8;
+}
+.typingTest p span.Correct {
+  color: green;
+}
+.typingTest p span.InCorrect {
+  color: red;
+  /* background: #ffc0cb; */
+  outline: 1px solid #fff;
+  border-radius: 4px;
+}
+
+.contentBox .content {
+  display: flex;
+  margin-top: 17px;
+  padding: 12px 0;
+  border-top: 1px solid #ccc;
+  justify-content: space-between;
+  align-items: center;
+}
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+.contentBox .testResult {
+  width: calc(100% - 144px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.testResult li {
+  height: 22px;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.testResult li p {
+  font-size: 19px;
+}
+.testResult li:not(:first-child) {
+  padding-left: 22px;
+  border-left: 1px solid #ccc;
+}
+.testResult li span {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.content button {
+  border: none;
+  outline: none;
+  width: 105px;
+  background: #17a2b8;
+  padding: 8px 0;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
